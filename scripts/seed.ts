@@ -1,14 +1,26 @@
 // One-off seed: `node scripts/seed.ts` (Node 22.6+ strips types natively).
 // Sources: ~/Downloads/mainresume.pdf (Sep 2026, base), ~/Downloads/Ujesh-Ai.pdf (AI variant), github.com/UJESH2K READMEs.
 // Refuses to overwrite an existing data/resume-db.json unless --force is passed.
-import { existsSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { blankVariant, newBullet, selectByTags, SECTION_ORDER } from "../lib/sections.ts";
 import type { Bullet, Db, SectionKey, Variant } from "../lib/types.ts";
 
 const out = new URL("../data/resume-db.json", import.meta.url);
-if (existsSync(out) && !process.argv.includes("--force")) {
-  console.error("data/resume-db.json already exists — pass --force to overwrite.");
-  process.exit(1);
+if (existsSync(out)) {
+  // The library is edited by hand in the app; regenerating it throws those edits away.
+  if (!process.argv.includes("--i-know-this-erases-my-library")) {
+    console.error(
+      "data/resume-db.json already exists.\n" +
+        "Re-seeding REPLACES your whole library (every edit, deletion and new entry).\n" +
+        "If you really mean it: node scripts/seed.ts --i-know-this-erases-my-library"
+    );
+    process.exit(1);
+  }
+  const dir = new URL("../data/backups/", import.meta.url);
+  mkdirSync(dir, { recursive: true });
+  const to = new URL(`resume-db-before-reseed-${new Date().toISOString().replace(/[:.]/g, "-")}.json`, dir);
+  copyFileSync(out, to);
+  console.warn("Backed up the old library to data/backups/");
 }
 
 let n = 0;

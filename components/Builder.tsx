@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ACCENTS, SECTION_DEFS, allTags, blankVariant, itemsOf, matchesTags, selectByTags, uid } from "@/lib/sections";
 import type { AnyItem, Bullet, Db, Variant, VariantSection } from "@/lib/types";
+import { PageHead } from "./AppShell";
 import { useDb } from "./DbProvider";
+import { Timeline } from "./Timeline";
 import { TagInput } from "./TagInput";
 
 interface Preview {
@@ -15,6 +17,7 @@ interface Preview {
 }
 
 const LS_KEY = "resume-studio:variant";
+const LS_VIEW = "resume-studio:view";
 
 export function Builder() {
   const { db, update } = useDb();
@@ -23,6 +26,7 @@ export function Builder() {
   const [filter, setFilter] = useState("");
   const [onlyMatching, setOnlyMatching] = useState(false);
   const [auto, setAuto] = useState(true);
+  const [view, setView] = useState<"sections" | "timeline">("sections");
   const [busy, setBusy] = useState(false);
   const [preview, setPreview] = useState<Preview | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -37,6 +41,21 @@ export function Builder() {
     } catch {}
     setVid(db.variants.some((v) => v.id === saved) ? saved : db.variants[0]?.id ?? "");
   }, [db, vid]);
+
+  useEffect(() => {
+    try {
+      const fromUrl = new URLSearchParams(window.location.search).get("view");
+      const v = fromUrl ?? localStorage.getItem(LS_VIEW);
+      if (v === "timeline" || v === "sections") setView(v);
+    } catch {}
+  }, []);
+
+  const pickView = (v: "sections" | "timeline") => {
+    setView(v);
+    try {
+      localStorage.setItem(LS_VIEW, v);
+    } catch {}
+  };
 
   const pick = (id: string) => {
     setVid(id);
@@ -179,8 +198,41 @@ export function Builder() {
   const hidden = new Set(variant.hiddenBullets);
   const q = filter.trim().toLowerCase();
 
+  const skillsIdx = variant.sections.findIndex((s) => s.key === "skills");
+  const expIdx = variant.sections.findIndex((s) => s.key === "experience");
+  const skillsBelowExperience = skillsIdx > expIdx;
+  /** Move Skills directly above Experience — the usual fix when a resume spills onto page two. */
+  const swapSkills = () =>
+    editVariant((v) => {
+      const [sk] = v.sections.splice(
+        v.sections.findIndex((s) => s.key === "skills"),
+        1
+      );
+      const to = v.sections.findIndex((s) => s.key === "experience");
+      v.sections.splice(to < 0 ? 0 : to, 0, sk);
+    });
+
   return (
-    <div className="builder">
+    <>
+      <PageHead
+        crumb="Builder"
+        title={variant.name}
+        subtitle={`${variant.sections.filter((s) => s.enabled && s.items.length).length} sections · ${variant.sections.reduce(
+          (n, s) => n + (s.enabled ? s.items.length : 0),
+          0
+        )} entries selected${preview ? ` · ${preview.pages} page${preview.pages === 1 ? "" : "s"}` : ""}`}
+        actions={
+          <div className="seg">
+            <button className={view === "sections" ? "active" : ""} onClick={() => pickView("sections")}>
+              Sections
+            </button>
+            <button className={view === "timeline" ? "active" : ""} onClick={() => pickView("timeline")}>
+              Timeline
+            </button>
+          </div>
+        }
+      />
+      <div className={`builder ${view === "timeline" ? "wide" : ""}`}>
       <aside className="controls">
         {/* Variant picker */}
         <div className="panel">
@@ -293,6 +345,10 @@ export function Builder() {
           </div>
         </div>
 
+        {view === "timeline" ? (
+          <Timeline db={db} variant={variant} editVariant={editVariant} />
+        ) : (
+          <>
         {/* Sections + items */}
         <div className="panel">
           <div className="panel-head">
@@ -322,10 +378,17 @@ export function Builder() {
             moveSection={moveSection}
           />
         ))}
-        <p className="hint">
-          Need something that isn&apos;t here? Add it in the <Link href="/library">Library</Link> and tag it — it shows up
-          in every variant, ready to tick.
-        </p>
+        </>
+        )}
+        <div className="tips">
+          <h3>Tips</h3>
+          <ol>
+            <li>Add anything new in the <Link href="/library">Library</Link>, tag it, then tick it here.</li>
+            <li>Open an entry to switch single bullets on or off for this resume.</li>
+            <li>Keep it to one page: untick projects, or drop to 10pt.</li>
+            <li>On a two-page resume, put Skills above Experience so page one sells you.</li>
+          </ol>
+        </div>
       </aside>
 
       <main className="preview">
@@ -342,6 +405,11 @@ export function Builder() {
               <span className={`badge ${preview.pages > 1 ? "warn" : "ok"}`}>
                 {preview.pages} page{preview.pages === 1 ? "" : "s"}
               </span>
+              {preview.pages > 1 && skillsBelowExperience && (
+                <button className="btn sm primary-ghost" onClick={swapSkills} title="Recommended on 2-page resumes">
+                  Skills above Experience
+                </button>
+              )}
               {preview.overflows > 0 && (
                 <span className="badge warn" title="A heading or line is wider than the page — shorten the tech stack line or title">
                   {preview.overflows} line overflow{preview.overflows > 1 ? "s" : ""}
@@ -378,7 +446,8 @@ export function Builder() {
           {busy && preview && <div className="busy-overlay">Compiling…</div>}
         </div>
       </main>
-    </div>
+      </div>
+    </>
   );
 }
 

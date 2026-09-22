@@ -196,7 +196,7 @@
       "id": "proj_gradmesh",
       "name": "GradMesh — Decentralized GPU Computing Platform",
       "tech": "Python, CUDA, FastAPI, PyTorch, YOLO",
-      "date": "",
+      "date": "Sep 2026",
       "codeLink": "https://github.com/UJESH2K/Gradmesh-v4",
       "liveLink": "",
       "bullets": [
@@ -236,7 +236,7 @@
       "id": "proj_worldforge",
       "name": "WorldForge AI — Real-Time World Generation",
       "tech": "React, Three.js, TypeScript, WebGL",
-      "date": "",
+      "date": "Aug 2026",
       "codeLink": "https://github.com/UJESH2K/INception-2",
       "liveLink": "https://i-nception-2.vercel.app",
       "bullets": [
@@ -290,7 +290,7 @@
       "id": "proj_memoryglasses",
       "name": "Memory Glasses — AI Wearable Memory",
       "tech": "Python, FastAPI, Ollama, LLaVA, SigLIP, Qdrant",
-      "date": "",
+      "date": "Jul 2026",
       "codeLink": "https://github.com/UJESH2K/embd",
       "liveLink": "",
       "bullets": [
@@ -320,7 +320,7 @@
       "id": "proj_blinky",
       "name": "Blinky — Intent-aware Focus Assistant",
       "tech": "TypeScript, Next.js, Groq, Ollama",
-      "date": "",
+      "date": "Sep 2026",
       "codeLink": "https://github.com/UJESH2K/ADHD-hack",
       "liveLink": "https://hhhs-smoky.vercel.app",
       "bullets": [
@@ -347,7 +347,7 @@
       "id": "proj_naturaljson",
       "name": "Natural-JSON — AI Trading Agent on Cardano",
       "tech": "TypeScript, Next.js, LLMs, Cardano",
-      "date": "",
+      "date": "Nov 2025",
       "codeLink": "https://github.com/UJESH2K/Natural-Json",
       "liveLink": "",
       "bullets": [
@@ -370,7 +370,7 @@
       "id": "proj_gitpay",
       "name": "GitPay — Crypto Payouts for Open Source",
       "tech": "React, Tailwind CSS, Node.js, Express, Solana",
-      "date": "",
+      "date": "Jan 2026",
       "codeLink": "https://github.com/UJESH2K/Gitpay",
       "liveLink": "",
       "bullets": [
@@ -394,7 +394,7 @@
       "id": "proj_blockparty",
       "name": "BlockParty — GitHub Bounty Marketplace",
       "tech": "React, Node.js, Clerk, GitHub Webhooks",
-      "date": "",
+      "date": "Sep 2025",
       "codeLink": "https://github.com/UJESH2K/GitBounty",
       "liveLink": "https://blockparty-backend.vercel.app",
       "bullets": [
@@ -418,7 +418,7 @@
       "id": "proj_dryp",
       "name": "DR-YP — Fashion E-commerce App",
       "tech": "React Native, Node.js, Express, MongoDB",
-      "date": "",
+      "date": "Jan 2026",
       "codeLink": "https://github.com/UJESH2K/DRYP-store",
       "liveLink": "https://dryp-store-sable.vercel.app",
       "bullets": [
@@ -446,7 +446,7 @@
       "id": "proj_bnbagents",
       "name": "Agents Playground — On-chain AI Trading",
       "tech": "Node.js, Express, BNB Chain",
-      "date": "",
+      "date": "Apr 2026",
       "codeLink": "https://github.com/UJESH2K/CRYPTO-AGENT-TRAINING",
       "liveLink": "https://crypto-agent-training.vercel.app",
       "bullets": [
@@ -468,7 +468,7 @@
       "id": "proj_attest",
       "name": "Consent-Search Attestation",
       "tech": "Python, OpenCV, Merkle Trees, Ethereum",
-      "date": "",
+      "date": "Sep 2026",
       "codeLink": "https://github.com/UJESH2K/SocialMatcher",
       "liveLink": "",
       "bullets": [
@@ -491,7 +491,7 @@
       "id": "proj_waterleak",
       "name": "Smart Water Leak Detection",
       "tech": "Python, scikit-learn, Streamlit, Folium, Groq",
-      "date": "",
+      "date": "May 2026",
       "codeLink": "https://github.com/UJESH2K/pipe_leak",
       "liveLink": "",
       "bullets": [
@@ -514,7 +514,7 @@
       "id": "proj_disaster",
       "name": "Natural Disaster Prediction",
       "tech": "Python, scikit-learn, Flask",
-      "date": "",
+      "date": "Dec 2025",
       "codeLink": "https://github.com/UJESH2K/Natural-disaster-prediction-",
       "liveLink": "",
       "bullets": [
@@ -536,7 +536,7 @@
       "id": "proj_leadgen",
       "name": "LeadGen — Tender Intelligence",
       "tech": "Python, Web Scraping, Data Pipelines",
-      "date": "",
+      "date": "May 2026",
       "codeLink": "https://github.com/UJESH2K/leadgen",
       "liveLink": "",
       "bullets": [
@@ -688,10 +688,17 @@
     },
     {
       "id": "ach_devdinova",
-      "text": "**Winner** — Dev Dinova International Blockchain Hackathon (Solana Track).",
+      "text": "**Winner** — Denova International Blockchain Hackathon (Solana Track).",
       "tags": [
         "all"
       ]
+    },
+    {
+      "id": "ach_e8ewskiq1",
+      "text": "**Hacktober fest 2025** — 7 accepted Open Source contribution to Litmus Chaos (React official repo) in the single month of october.",
+      "link": "https://www.holopin.io/@ujesh2k#",
+      "linkLabel": "",
+      "tags": []
     },
     {
       "id": "ach_cypher",
@@ -772,24 +779,6 @@
         "all"
       ],
       "note": "Add the year."
-    },
-    {
-      "id": "lead_gdg",
-      "title": "Google Developer Group (GDG) On Campus",
-      "link": "",
-      "date": "2023 – 2024",
-      "subtitle": "",
-      "org": "",
-      "bullets": [
-        {
-          "id": "b_51",
-          "text": "Participated in AI/ML technical sessions and completed Google Cloud training."
-        }
-      ],
-      "tags": [
-        "all"
-      ],
-      "note": "Ujesh-Ai.pdf calls this 'AI Lead' (led workshops, mentored students). mainresume.pdf says participant. Pick the accurate one."
     }
   ],
   "certifications": [],
@@ -853,7 +842,8 @@
             "sk_aiml_short",
             "sk_db",
             "sk_cloud",
-            "sk_tools"
+            "sk_tools",
+            "sk_genai"
           ]
         },
         {
@@ -862,7 +852,9 @@
           "enabled": true,
           "items": [
             "proj_gradmesh",
-            "proj_worldforge"
+            "proj_worldforge",
+            "proj_blockparty",
+            "proj_buyorwait"
           ]
         },
         {
@@ -871,8 +863,7 @@
           "enabled": true,
           "items": [
             "lead_codeclub",
-            "lead_vigyan",
-            "lead_gdg"
+            "lead_vigyan"
           ]
         },
         {
@@ -882,6 +873,7 @@
           "items": [
             "ach_inception",
             "ach_devdinova",
+            "ach_e8ewskiq1",
             "ach_cypher",
             "ach_finalist",
             "ach_github"
@@ -978,8 +970,7 @@
           "enabled": true,
           "items": [
             "lead_codeclub",
-            "lead_vigyan",
-            "lead_gdg"
+            "lead_vigyan"
           ]
         },
         {
@@ -1087,8 +1078,7 @@
           "enabled": true,
           "items": [
             "lead_codeclub",
-            "lead_vigyan",
-            "lead_gdg"
+            "lead_vigyan"
           ]
         },
         {
@@ -1193,8 +1183,7 @@
           "enabled": true,
           "items": [
             "lead_codeclub",
-            "lead_vigyan",
-            "lead_gdg"
+            "lead_vigyan"
           ]
         },
         {
@@ -1303,8 +1292,7 @@
           "enabled": true,
           "items": [
             "lead_codeclub",
-            "lead_vigyan",
-            "lead_gdg"
+            "lead_vigyan"
           ]
         },
         {
@@ -1411,8 +1399,7 @@
           "enabled": true,
           "items": [
             "lead_codeclub",
-            "lead_vigyan",
-            "lead_gdg"
+            "lead_vigyan"
           ]
         },
         {
@@ -1523,8 +1510,7 @@
           "enabled": true,
           "items": [
             "lead_codeclub",
-            "lead_vigyan",
-            "lead_gdg"
+            "lead_vigyan"
           ]
         },
         {

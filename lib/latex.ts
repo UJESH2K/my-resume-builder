@@ -120,9 +120,10 @@ function renderProjects(items: Project[], title: string, hidden: Set<string>) {
     title,
     items.map((p) => {
       const left = `\\textbf{${inline(p.name)}}` + (p.tech?.trim() ? ` $|$ \\emph{${inline(p.tech)}}` : "");
+      // Short labels: a project heading plus a long tech line overflows the margin otherwise.
       const right = [
-        p.liveLink?.trim() ? link(p.liveLink, "Live") : "",
-        p.codeLink?.trim() ? link(p.codeLink, "Source Code") : "",
+        p.liveLink?.trim() ? link(p.liveLink, "Demo") : "",
+        p.codeLink?.trim() ? link(p.codeLink, "Code") : "",
         p.date?.trim() ? esc(p.date) : "",
       ]
         .filter(Boolean)

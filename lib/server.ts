@@ -25,10 +25,28 @@ export async function readDb(): Promise<Db> {
 
 export async function writeDb(db: Db): Promise<number> {
   const { rev: _rev, ...rest } = db;
+  await backupDb();
   const tmp = DB_PATH + ".tmp";
   await fs.writeFile(tmp, JSON.stringify(rest, null, 2) + "\n", "utf8");
   await fs.rename(tmp, DB_PATH);
   return Math.floor((await fs.stat(DB_PATH)).mtimeMs);
+}
+
+export const BACKUP_DIR = path.join(ROOT, "data", "backups");
+const KEEP_BACKUPS = 30;
+
+/** Copy the current library aside before overwriting it, so an edit can never be lost for good. */
+export async function backupDb(): Promise<void> {
+  try {
+    const current = await fs.readFile(DB_PATH, "utf8");
+    await fs.mkdir(BACKUP_DIR, { recursive: true });
+    const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+    await fs.writeFile(path.join(BACKUP_DIR, `resume-db-${stamp}.json`), current, "utf8");
+    const files = (await fs.readdir(BACKUP_DIR)).filter((f) => f.endsWith(".json")).sort();
+    await Promise.all(files.slice(0, -KEEP_BACKUPS).map((f) => fs.rm(path.join(BACKUP_DIR, f), { force: true })));
+  } catch {
+    // no existing file (first run) — nothing to back up
+  }
 }
 
 // Serialise pdflatex runs so two compiles never share a build dir at once.

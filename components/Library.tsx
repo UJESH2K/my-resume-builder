@@ -1,9 +1,10 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { SECTION_DEFS, SECTION_ORDER, allTags, itemsOf, newBullet, uid, type Field } from "@/lib/sections";
 import type { AnyItem, Bullet, Db, Profile, SectionKey } from "@/lib/types";
+import { PageHead } from "./AppShell";
 import { useDb } from "./DbProvider";
 import { TagInput } from "./TagInput";
 
@@ -36,9 +37,16 @@ export function Library() {
     router.replace(t === "profile" ? "/library" : `/library?s=${t}`);
   };
 
+  const label = tab === "profile" ? "Profile" : SECTION_DEFS[tab].label;
+
   return (
-    <div className="library">
-      <nav className="lib-nav">
+    <>
+      <PageHead
+        crumb="Library"
+        title={label}
+        subtitle="Everything you have ever done, tagged once and reused in every resume."
+      />
+      <nav className="lib-tabs">
         <button className={tab === "profile" ? "active" : ""} onClick={() => setTab("profile")}>
           Profile
         </button>
@@ -48,48 +56,44 @@ export function Library() {
             <span className="count">{itemsOf(db, k).length}</span>
           </button>
         ))}
-        <div className="lib-help">
-          <h3>Formatting in text</h3>
-          <code>**bold**</code> <code>__underline__</code> <code>*italic*</code> <code>`code`</code>{" "}
-          <code>[label](https://…)</code>
-          <h3>Tags</h3>
-          <p>
-            Tag every entry with the roles it suits (<code>ai</code>, <code>sde</code>, <code>cloud</code>,{" "}
-            <code>web3</code>, <code>freelance</code>…). Use <code>all</code> for things every resume needs.
-          </p>
-        </div>
       </nav>
 
-      {tab === "profile" ? (
-        <section className="lib-editor wide">
-          <h2>Profile &amp; contact</h2>
-          <p className="hint">Printed in the header of every resume.</p>
-          <div className="form-grid">
-            {PROFILE_FIELDS.map((f) => (
-              <label key={f.key} className="field">
-                <span>{f.label}</span>
-                <input
-                  value={db.profile[f.key] ?? ""}
-                  placeholder={f.placeholder}
-                  onChange={(e) => update((d) => void (d.profile[f.key] = e.target.value))}
-                />
-              </label>
-            ))}
-          </div>
-        </section>
-      ) : (
-        <SectionEditor
-          key={tab}
-          db={db}
-          sectionKey={tab}
-          selId={selId}
-          setSelId={setSelId}
-          query={query}
-          setQuery={setQuery}
-          tags={tags}
-        />
-      )}
-    </div>
+      <div className={`library${tab === "profile" ? " single" : ""}`}>
+        {tab === "profile" ? (
+          <section className="lib-editor wide">
+            <h2>Profile &amp; contact</h2>
+            <p className="hint">Printed in the header of every resume.</p>
+            <div className="form-grid">
+              {PROFILE_FIELDS.map((f) => (
+                <label key={f.key} className="field half">
+                  <span>{f.label}</span>
+                  <input
+                    value={db.profile[f.key] ?? ""}
+                    placeholder={f.placeholder}
+                    onChange={(e) => update((d) => void (d.profile[f.key] = e.target.value))}
+                  />
+                </label>
+              ))}
+            </div>
+            <div className="fmt-help">
+              Formatting anywhere: <code>**bold**</code> <code>__underline__</code> <code>*italic*</code>{" "}
+              <code>`code`</code> <code>[label](https://…)</code> — or select text and press <strong>Link</strong>.
+            </div>
+          </section>
+        ) : (
+          <SectionEditor
+            key={tab}
+            db={db}
+            sectionKey={tab}
+            selId={selId}
+            setSelId={setSelId}
+            query={query}
+            setQuery={setQuery}
+            tags={tags}
+          />
+        )}
+      </div>
+    </>
   );
 }
 
@@ -231,6 +235,32 @@ function SectionEditor({
   );
 }
 
+/**
+ * Wraps the current selection (or the whole value) in [label](url) markdown.
+ * Works on any text input or textarea, so anything printed can become a link.
+ */
+function LinkButton({ target, onChange }: { target: React.RefObject<HTMLInputElement | HTMLTextAreaElement | null>; onChange: (v: string) => void }) {
+  const insert = () => {
+    const el = target.current;
+    if (!el) return;
+    const value = el.value ?? "";
+    const start = el.selectionStart ?? 0;
+    const end = el.selectionEnd ?? 0;
+    const selected = start !== end ? value.slice(start, end) : "";
+    const label = selected || window.prompt("Text to show as the link", "") || "";
+    if (!label.trim()) return;
+    const url = window.prompt(`Link for “${label.trim()}”`, "https://");
+    if (!url || url === "https://") return;
+    const md = `[${label.trim()}](${url.trim()})`;
+    onChange(selected ? value.slice(0, start) + md + value.slice(end) : value + (value && !value.endsWith(" ") ? " " : "") + md);
+  };
+  return (
+    <button type="button" className="link-btn" onClick={insert} title="Select text first, then add a link">
+      Link
+    </button>
+  );
+}
+
 function FieldEditor({
   field: f,
   item,
@@ -242,7 +272,15 @@ function FieldEditor({
   edit: (fn: (item: any) => void) => void;
   tags: string[];
 }) {
+  const ref = useRef<HTMLInputElement | HTMLTextAreaElement | null>(null);
   const cls = `field ${f.half ? "half" : "full"}`;
+  const linkable = f.type === "text" || f.type === "textarea";
+  const labelRow = (
+    <span className="field-label">
+      {f.label}
+      {linkable && !/link/i.test(f.key) && <LinkButton target={ref} onChange={(v) => edit((it) => void (it[f.key] = v))} />}
+    </span>
+  );
   if (f.type === "tags")
     return (
       <label className={cls}>
@@ -254,8 +292,9 @@ function FieldEditor({
   if (f.type === "textarea")
     return (
       <label className={cls}>
-        <span>{f.label}</span>
+        {labelRow}
         <textarea
+          ref={ref as React.RefObject<HTMLTextAreaElement>}
           rows={f.key === "note" ? 2 : 3}
           value={item[f.key] ?? ""}
           placeholder={f.placeholder}
@@ -265,9 +304,30 @@ function FieldEditor({
     );
   return (
     <label className={cls}>
-      <span>{f.label}</span>
-      <input value={item[f.key] ?? ""} placeholder={f.placeholder} onChange={(e) => edit((it) => void (it[f.key] = e.target.value))} />
+      {labelRow}
+      <input
+        ref={ref as React.RefObject<HTMLInputElement>}
+        value={item[f.key] ?? ""}
+        placeholder={f.placeholder}
+        onChange={(e) => edit((it) => void (it[f.key] = e.target.value))}
+      />
     </label>
+  );
+}
+
+function BulletText({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const ref = useRef<HTMLTextAreaElement | null>(null);
+  return (
+    <div className="bullet-text">
+      <textarea
+        ref={ref}
+        rows={2}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder="Did X using Y, resulting in Z"
+      />
+      <LinkButton target={ref} onChange={onChange} />
+    </div>
   );
 }
 
@@ -296,11 +356,9 @@ function BulletsEditor({
         {bullets.map((b, i) => (
           <li key={b.id}>
             <div className="bullet-body">
-              <textarea
-                rows={2}
+              <BulletText
                 value={b.text}
-                onChange={(e) => edit((it) => void (it.bullets[i].text = e.target.value))}
-                placeholder="Did X using Y, resulting in Z"
+                onChange={(v) => edit((it) => void (it.bullets[i].text = v))}
               />
               <TagInput
                 value={b.tags ?? []}
