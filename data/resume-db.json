@@ -1,0 +1,1557 @@
+{
+  "profile": {
+    "name": "Ujesh Kumar Yadav",
+    "phone": "+91 8867346693",
+    "email": "ujeshyadav20k5@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ujesh-kumar-yadav/",
+    "github": "https://github.com/UJESH2K",
+    "portfolio": "",
+    "location": "Bengaluru, India"
+  },
+  "summary": [
+    {
+      "id": "sum_swe",
+      "text": "Software engineer shipping production full-stack features (React, Next.js, Node.js) and applied AI/ML on AWS. Built and deployed features end to end at two startups, working directly with founders. Winner of 4 national hackathons.",
+      "tags": [
+        "sde",
+        "fullstack",
+        "backend",
+        "cloud",
+        "freelance",
+        "web3"
+      ]
+    },
+    {
+      "id": "sum_ai",
+      "text": "AI/ML engineer building production systems across computer vision, LLMs and RAG. Owned AI features end to end at two startups, from dataset and model work through AWS deployment. Winner of 4 national hackathons.",
+      "tags": [
+        "ai",
+        "ml",
+        "llm"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "edu_atria",
+      "institution": "Atria Institute of Technology (VTU), Bengaluru",
+      "link": "",
+      "degree": "Bachelor of Engineering in Computer Science and Engineering",
+      "start": "2023",
+      "end": "Present",
+      "score": "CGPA: 7.7/10",
+      "location": "Bengaluru, India",
+      "bullets": [
+        {
+          "id": "b_1",
+          "text": "Relevant coursework: Data Structures & Algorithms, OOP, Operating Systems, Computer Networks, DBMS, Artificial Intelligence, Machine Learning, Cloud Computing."
+        }
+      ],
+      "tags": [
+        "all"
+      ],
+      "note": "CGPA was 7.55 on mainresume.pdf and 8.0 on Ujesh-Ai.pdf; set to 7.7 per your latest message. Update each semester. Institution inferred from USN 1AT23CS172 + Code Club at Atria — confirm."
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp_easemed",
+      "company": "EaseMed (Healthcare Startup)",
+      "companyLink": "https://easemed.in/",
+      "role": "Full Stack Developer Intern",
+      "kind": "Internship",
+      "start": "Jan 2026",
+      "end": "Jun 2026",
+      "location": "Bengaluru, India",
+      "bullets": [
+        {
+          "id": "b_2",
+          "text": "Built and shipped a **disease-outbreak prediction model** as the sole engineer on the feature, correlating global trade data with WHO and government health APIs to generate inventory-risk guardrails."
+        },
+        {
+          "id": "b_3",
+          "text": "Developed a **serverless data-ingestion pipeline** (Node.js, Supabase, Hugging Face-hosted parser) validated for reliable operation with 10-20 concurrent users during testing.",
+          "tags": [
+            "sde",
+            "fullstack",
+            "backend",
+            "cloud",
+            "freelance",
+            "web3"
+          ]
+        },
+        {
+          "id": "b_4",
+          "text": "Built a **WebSocket**-based real-time messaging backend connecting hospital and vendor users, with a responsive React/Next.js frontend; implemented authentication and **role-based access control** end-to-end.",
+          "tags": [
+            "sde",
+            "fullstack",
+            "backend",
+            "cloud",
+            "freelance",
+            "web3"
+          ]
+        },
+        {
+          "id": "b_5",
+          "text": "Built **RAG pipelines** for context-aware medical question answering, ingesting prescriptions, lab reports and clinical PDFs into searchable vector representations.",
+          "tags": [
+            "ai",
+            "ml",
+            "llm"
+          ]
+        },
+        {
+          "id": "b_6",
+          "text": "Developed AI inference services integrating LLM APIs, embedding models and semantic search; deployed on **AWS EC2/S3**, Nginx, PM2 and Vercel.",
+          "tags": [
+            "ai",
+            "llm",
+            "cloud"
+          ]
+        }
+      ],
+      "tags": [
+        "all"
+      ],
+      "note": "Ujesh-Ai.pdf lists this as 'AI Engineer Intern, Dec 2025 – May 2026'. Pick one title/date range and keep it consistent across resumes."
+    },
+    {
+      "id": "exp_edactly",
+      "company": "Edactly (EdTech Platform)",
+      "companyLink": "https://beta.edactly.com/",
+      "role": "Freelance Full Stack Developer",
+      "kind": "Freelance",
+      "start": "2026",
+      "end": "Present",
+      "location": "Remote",
+      "bullets": [
+        {
+          "id": "b_7",
+          "text": "Built an **AI pipeline** (Python, Manim, Matplotlib) that generates explainer videos directly from natural-language prompts, backed by a **RAG pipeline** with a vector database over NCERT grades 1-12 curriculum content."
+        },
+        {
+          "id": "b_8",
+          "text": "Cleaned and re-labeled a ~5,000-prompt dataset, removing low-quality entries and adding ~1,000 new data points to improve generation quality.",
+          "tags": [
+            "ai",
+            "ml",
+            "llm",
+            "freelance"
+          ]
+        },
+        {
+          "id": "b_9",
+          "text": "Deployed the pipeline on **AWS (S3, Lambda)**, generating a 3-minute video in ~5 minutes at roughly ₹7 compute cost per video."
+        },
+        {
+          "id": "b_10",
+          "text": "Implemented authentication, user management and scalable APIs for the platform's dashboards and content workflows.",
+          "tags": [
+            "sde",
+            "fullstack",
+            "backend",
+            "cloud",
+            "freelance",
+            "web3"
+          ]
+        }
+      ],
+      "tags": [
+        "all"
+      ],
+      "note": "Ujesh-Ai.pdf titles this 'AI Software Engineer — Edactly'."
+    },
+    {
+      "id": "exp_hitachi",
+      "company": "Hitachi",
+      "companyLink": "",
+      "role": "Machine Learning Intern",
+      "kind": "Internship",
+      "start": "2025 (3 months)",
+      "end": "",
+      "location": "",
+      "bullets": [
+        {
+          "id": "b_11",
+          "text": "Led a student team building a ~600-image dataset for a **bird-species computer-vision** project, personally capturing images and owning model development, data labeling (Label Studio) and pipeline design end-to-end."
+        },
+        {
+          "id": "b_12",
+          "text": "Performed dataset preprocessing, annotation validation and quality assurance to improve downstream model performance for biodiversity monitoring.",
+          "tags": [
+            "ai",
+            "ml"
+          ]
+        }
+      ],
+      "tags": [
+        "all"
+      ],
+      "note": "mainresume.pdf links a 'Training notebook' — paste its URL into the first bullet as [Training notebook](url)."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_gradmesh",
+      "name": "GradMesh — Decentralized GPU Computing Platform",
+      "tech": "Python, CUDA, FastAPI, PyTorch, YOLO",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/Gradmesh-v4",
+      "liveLink": "",
+      "bullets": [
+        {
+          "id": "b_13",
+          "text": "Built a distributed GPU platform that aggregates idle GPUs from multiple machines into one compute network, with a **coordinator-worker architecture** for registration, workload distribution and result aggregation."
+        },
+        {
+          "id": "b_14",
+          "text": "Benchmarked distributed inference across **4 GPU nodes** using a FastAPI coordination layer, achieving up to **1.8x speedup** over single-node execution (network-dependent)."
+        },
+        {
+          "id": "b_15",
+          "text": "Ran round-synchronised **YOLO** training across peers with **FedAvg** weight aggregation.",
+          "tags": [
+            "ai",
+            "ml",
+            "distributed"
+          ]
+        },
+        {
+          "id": "b_16",
+          "text": "Replaced even dataset splits with **capability-aware scheduling** that benchmarks each device and sizes its work, so rounds no longer wait on the slowest GPU; host setup reduced to one command.",
+          "tags": [
+            "systems",
+            "distributed",
+            "cloud",
+            "sde"
+          ]
+        }
+      ],
+      "tags": [
+        "all"
+      ]
+    },
+    {
+      "id": "proj_worldforge",
+      "name": "WorldForge AI — Real-Time World Generation",
+      "tech": "React, Three.js, TypeScript, WebGL",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/INception-2",
+      "liveLink": "https://i-nception-2.vercel.app",
+      "bullets": [
+        {
+          "id": "b_17",
+          "text": "Built a browser-based game engine at **India's First World Model Hackathon (Inception — winner)** that procedurally generates game worlds from natural-language prompts, synthesizing environments, terrain and NPCs in real time."
+        },
+        {
+          "id": "b_18",
+          "text": "Designed an AI-driven runtime for procedural world generation, adaptive boss encounters and persistent real-time gameplay without pre-built assets.",
+          "tags": [
+            "ai",
+            "llm"
+          ]
+        }
+      ],
+      "tags": [
+        "all"
+      ],
+      "note": "The INception-2 README now describes a robot-policy evaluation platform; check the links point to the world-engine version."
+    },
+    {
+      "id": "proj_buyorwait",
+      "name": "Buy or Wait? — HackerRank Orchestrate",
+      "tech": "Python, Claude API, Vision LLMs",
+      "date": "Sep 2026",
+      "codeLink": "https://github.com/UJESH2K/Hackerrank-september2026-orchestrate",
+      "liveLink": "",
+      "bullets": [
+        {
+          "id": "b_19",
+          "text": "Built a **deterministic financial decision engine** scored field-by-field against hidden ground truth (amounts, dates, payment plans)."
+        },
+        {
+          "id": "b_20",
+          "text": "Designed a narrow **LLM perception layer** that turns messages and bill images into typed amendments from a closed schema, so **prompt injection cannot change a decision**."
+        },
+        {
+          "id": "b_21",
+          "text": "Read blank-amount bill images with **two independent models** plus caching for reproducible, verifiable output."
+        }
+      ],
+      "tags": [
+        "ai",
+        "llm",
+        "backend"
+      ],
+      "note": "Add result/rank."
+    },
+    {
+      "id": "proj_memoryglasses",
+      "name": "Memory Glasses — AI Wearable Memory",
+      "tech": "Python, FastAPI, Ollama, LLaVA, SigLIP, Qdrant",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/embd",
+      "liveLink": "",
+      "bullets": [
+        {
+          "id": "b_22",
+          "text": "Wearable assistant that captures frames from a webcam or **ESP32-CAM** and answers questions like *Where did I leave my charger?* using **RAG** over a vector DB."
+        },
+        {
+          "id": "b_23",
+          "text": "Used **SigLIP** image embeddings and cosine-similarity scene-boundary detection so the vision model only summarises unique scenes."
+        },
+        {
+          "id": "b_24",
+          "text": "Runs fully locally: **LLaVA** structured scene JSON, nomic-embed-text embeddings in **Qdrant**, **Llama 3.2** daily summaries and a FastAPI Q&A service."
+        }
+      ],
+      "tags": [
+        "ai",
+        "ml",
+        "llm",
+        "cv",
+        "rag",
+        "iot"
+      ]
+    },
+    {
+      "id": "proj_blinky",
+      "name": "Blinky — Intent-aware Focus Assistant",
+      "tech": "TypeScript, Next.js, Groq, Ollama",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/ADHD-hack",
+      "liveLink": "https://hhhs-smoky.vercel.app",
+      "bullets": [
+        {
+          "id": "b_25",
+          "text": "Remembers the one task you sat down to do, detects drift from screen activity and sends the reminder to the device that pulled you away."
+        },
+        {
+          "id": "b_26",
+          "text": "**Privacy by schema**: frames are analysed then discarded and only text descriptions are stored; local frame diffing skips unchanged screens to cut model cost."
+        },
+        {
+          "id": "b_27",
+          "text": "**Groq** vision readings in about 1s with an **Ollama** local fallback for offline or rate-limited use; detects task completion so reminders stop on their own."
+        }
+      ],
+      "tags": [
+        "ai",
+        "llm",
+        "fullstack"
+      ]
+    },
+    {
+      "id": "proj_naturaljson",
+      "name": "Natural-JSON — AI Trading Agent on Cardano",
+      "tech": "TypeScript, Next.js, LLMs, Cardano",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/Natural-Json",
+      "liveLink": "",
+      "bullets": [
+        {
+          "id": "b_28",
+          "text": "AI agent that turns plain English (*buy 10 ADA every 5 seconds and email me*) into **executable workflows** run on **Cardano**."
+        },
+        {
+          "id": "b_29",
+          "text": "Streams live trades and notifications in real time, with a chat-style history of every agent the user has created."
+        }
+      ],
+      "tags": [
+        "ai",
+        "llm",
+        "web3"
+      ]
+    },
+    {
+      "id": "proj_gitpay",
+      "name": "GitPay — Crypto Payouts for Open Source",
+      "tech": "React, Tailwind CSS, Node.js, Express, Solana",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/Gitpay",
+      "liveLink": "",
+      "bullets": [
+        {
+          "id": "b_30",
+          "text": "Decentralised reward platform that pays contributors in **USDC on Solana** directly from GitHub: code → merge → reward."
+        },
+        {
+          "id": "b_31",
+          "text": "A **GitHub App** tracks contributions, **smart contracts** make payouts trustless, and a dashboard keeps reward history transparent."
+        }
+      ],
+      "tags": [
+        "web3",
+        "fullstack",
+        "backend"
+      ],
+      "note": "Built for Dev Dinova (Solana track)? If so, mention the win here."
+    },
+    {
+      "id": "proj_blockparty",
+      "name": "BlockParty — GitHub Bounty Marketplace",
+      "tech": "React, Node.js, Clerk, GitHub Webhooks",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/GitBounty",
+      "liveLink": "https://blockparty-backend.vercel.app",
+      "bullets": [
+        {
+          "id": "b_32",
+          "text": "Bounty marketplace that automates bounty creation through contributor reward, with GitHub OAuth (Clerk) and **role-based access**."
+        },
+        {
+          "id": "b_33",
+          "text": "Creates repository **webhooks** automatically, monitors pull requests in real time and completes bounties when a PR is merged."
+        }
+      ],
+      "tags": [
+        "web3",
+        "fullstack",
+        "backend"
+      ],
+      "note": "Team project — note your role."
+    },
+    {
+      "id": "proj_dryp",
+      "name": "DR-YP — Fashion E-commerce App",
+      "tech": "React Native, Node.js, Express, MongoDB",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/DRYP-store",
+      "liveLink": "https://dryp-store-sable.vercel.app",
+      "bullets": [
+        {
+          "id": "b_34",
+          "text": "Mobile-first fashion e-commerce app with separate **customer** and **vendor** experiences."
+        },
+        {
+          "id": "b_35",
+          "text": "Style-preference onboarding for personalisation, plus product search with brand, category and price filters, a wishlist and a cart."
+        },
+        {
+          "id": "b_36",
+          "text": "Vendor dashboard for product CRUD, search and store-profile management."
+        }
+      ],
+      "tags": [
+        "sde",
+        "fullstack",
+        "mobile",
+        "freelance"
+      ]
+    },
+    {
+      "id": "proj_bnbagents",
+      "name": "Agents Playground — On-chain AI Trading",
+      "tech": "Node.js, Express, BNB Chain",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/CRYPTO-AGENT-TRAINING",
+      "liveLink": "https://crypto-agent-training.vercel.app",
+      "bullets": [
+        {
+          "id": "b_37",
+          "text": "AI trading agents (arbitrage, mean-reversion, momentum) competing on **prediction markets** fully on-chain on **BNB Chain**."
+        },
+        {
+          "id": "b_38",
+          "text": "Node.js orchestrator with a synthetic market simulator and a REST API powering a live dashboard."
+        }
+      ],
+      "tags": [
+        "ai",
+        "web3"
+      ]
+    },
+    {
+      "id": "proj_attest",
+      "name": "Consent-Search Attestation",
+      "tech": "Python, OpenCV, Merkle Trees, Ethereum",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/SocialMatcher",
+      "liveLink": "",
+      "bullets": [
+        {
+          "id": "b_39",
+          "text": "Pipeline proving cryptographically that consent existed before a face search, that the search set was fixed in advance, and that every result (including nulls) is unaltered."
+        },
+        {
+          "id": "b_40",
+          "text": "Builds a **Merkle tree** of per-search leaves anchored **on-chain** (Sepolia), with a standalone bundle verifier."
+        }
+      ],
+      "tags": [
+        "security",
+        "web3",
+        "cv"
+      ]
+    },
+    {
+      "id": "proj_waterleak",
+      "name": "Smart Water Leak Detection",
+      "tech": "Python, scikit-learn, Streamlit, Folium, Groq",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/pipe_leak",
+      "liveLink": "",
+      "bullets": [
+        {
+          "id": "b_41",
+          "text": "ML leak detection on IoT sensor data (pressure, flow, vibration, temperature), comparing Random Forest, Decision Tree, Logistic Regression and SVM."
+        },
+        {
+          "id": "b_42",
+          "text": "**Streamlit** dashboard with what-if simulation, batch CSV prediction, GIS zone maps and a **Groq LLaMA** assistant for maintenance insights."
+        }
+      ],
+      "tags": [
+        "ml",
+        "data",
+        "iot"
+      ]
+    },
+    {
+      "id": "proj_disaster",
+      "name": "Natural Disaster Prediction",
+      "tech": "Python, scikit-learn, Flask",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/Natural-disaster-prediction-",
+      "liveLink": "",
+      "bullets": [
+        {
+          "id": "b_43",
+          "text": "ML models on environmental data for early warning of floods, wildfires and earthquakes, served through **Flask**."
+        },
+        {
+          "id": "b_44",
+          "text": "Earthquake model trained on **14,698** seismic events from the Hindu Kush region, with feature selection and null-value imputation."
+        }
+      ],
+      "tags": [
+        "ml",
+        "data"
+      ]
+    },
+    {
+      "id": "proj_leadgen",
+      "name": "LeadGen — Tender Intelligence",
+      "tech": "Python, Web Scraping, Data Pipelines",
+      "date": "",
+      "codeLink": "https://github.com/UJESH2K/leadgen",
+      "liveLink": "",
+      "bullets": [
+        {
+          "id": "b_45",
+          "text": "Lead-generation pipeline for healthcare suppliers across Indian procurement portals, with pluggable source adapters (API, CSV, scraper) and a normalised schema."
+        },
+        {
+          "id": "b_46",
+          "text": "Scores tenders against a business profile (keywords, states, tender value, closing window) and exports ranked leads for outreach."
+        }
+      ],
+      "tags": [
+        "backend",
+        "data",
+        "freelance"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "sk_lang",
+      "category": "Languages",
+      "items": "JavaScript, TypeScript, Python, C++, C, SQL",
+      "tags": [
+        "all"
+      ]
+    },
+    {
+      "id": "sk_core",
+      "category": "Core CS",
+      "items": "Data Structures & Algorithms, OOP, Operating Systems, Computer Networks, DBMS",
+      "tags": [
+        "sde",
+        "fullstack",
+        "backend",
+        "cloud",
+        "freelance",
+        "web3"
+      ]
+    },
+    {
+      "id": "sk_front",
+      "category": "Frontend",
+      "items": "React.js, Next.js, Redux, HTML5, CSS3, Tailwind CSS",
+      "tags": [
+        "sde",
+        "fullstack",
+        "backend",
+        "cloud",
+        "freelance",
+        "web3"
+      ]
+    },
+    {
+      "id": "sk_back",
+      "category": "Backend & Architecture",
+      "items": "Node.js, Express.js, REST APIs, WebSockets, Microservices, JWT Authentication",
+      "tags": [
+        "sde",
+        "fullstack",
+        "backend",
+        "cloud",
+        "freelance",
+        "web3"
+      ]
+    },
+    {
+      "id": "sk_aiml_short",
+      "category": "AI/ML",
+      "items": "Machine Learning fundamentals, RAG pipelines, Vector Databases, Computer Vision, Prompt Engineering",
+      "tags": [
+        "sde",
+        "fullstack",
+        "backend",
+        "cloud",
+        "freelance",
+        "web3"
+      ]
+    },
+    {
+      "id": "sk_ai",
+      "category": "AI & Deep Learning",
+      "items": "PyTorch, TensorFlow, OpenCV, YOLO, MobileNet, MediaPipe, Computer Vision, Transfer Learning",
+      "tags": [
+        "ai",
+        "ml"
+      ]
+    },
+    {
+      "id": "sk_genai",
+      "category": "Generative AI",
+      "items": "LLMs, RAG, LangChain, Prompt Engineering, Semantic Search, Embedding Models, AI Agents, Ollama",
+      "tags": [
+        "ai",
+        "llm"
+      ]
+    },
+    {
+      "id": "sk_ml",
+      "category": "Machine Learning",
+      "items": "scikit-learn, NumPy, Pandas, Feature Engineering, Model Evaluation, Object Detection",
+      "tags": [
+        "ai",
+        "ml"
+      ]
+    },
+    {
+      "id": "sk_db",
+      "category": "Databases",
+      "items": "MongoDB, PostgreSQL, MySQL, Prisma ORM, Firebase, Qdrant",
+      "tags": [
+        "all"
+      ]
+    },
+    {
+      "id": "sk_cloud",
+      "category": "Cloud & DevOps",
+      "items": "AWS (EC2, S3, Lambda, CloudFront), Docker, Nginx, Vercel, GitHub Actions, Linux",
+      "tags": [
+        "all"
+      ]
+    },
+    {
+      "id": "sk_web3",
+      "category": "Web3",
+      "items": "Solana, Cardano, BNB Chain, Smart Contracts",
+      "tags": [
+        "web3"
+      ]
+    },
+    {
+      "id": "sk_tools",
+      "category": "Tools",
+      "items": "Git, GitHub, Postman, VS Code, Jupyter, AI coding tools (Copilot, Cursor, Claude Code)",
+      "tags": [
+        "all"
+      ]
+    }
+  ],
+  "awards": [],
+  "achievements": [
+    {
+      "id": "ach_inception",
+      "text": "**Winner** — Inception: India's First World Model Hackathon.",
+      "tags": [
+        "all"
+      ]
+    },
+    {
+      "id": "ach_devdinova",
+      "text": "**Winner** — Dev Dinova International Blockchain Hackathon (Solana Track).",
+      "tags": [
+        "all"
+      ]
+    },
+    {
+      "id": "ach_cypher",
+      "text": "**Winner** — Cypher 1 & Cypher 3 Hackathons, Atria Institute of Technology.",
+      "tags": [
+        "all"
+      ]
+    },
+    {
+      "id": "ach_finalist",
+      "text": "**Finalist in 15+ national hackathons**; Regional Qualifier, Google Solution Challenge India; ICPC regional prelims qualifier (2x).",
+      "tags": [
+        "all"
+      ],
+      "note": "Ujesh-Ai.pdf says 10+ finalist — confirm the count."
+    },
+    {
+      "id": "ach_github",
+      "text": "Built and shipped **65+ public projects** on [GitHub](https://github.com/UJESH2K) across AI/ML, distributed systems and Web3.",
+      "tags": [
+        "all"
+      ]
+    }
+  ],
+  "leadership": [
+    {
+      "id": "lead_codeclub",
+      "title": "Technical Lead — Code Club, Atria Institute of Technology",
+      "link": "",
+      "date": "2024 – Present",
+      "subtitle": "",
+      "org": "",
+      "bullets": [
+        {
+          "id": "b_47",
+          "text": "Lead full-stack development initiatives for a **200+ member** community; mentor students on architecture, backend engineering and deployment."
+        },
+        {
+          "id": "b_48",
+          "text": "Conduct code reviews, technical design sessions and project mentoring from ideation to production deployment.",
+          "tags": [
+            "ai",
+            "sde"
+          ]
+        }
+      ],
+      "tags": [
+        "all"
+      ],
+      "note": "Ujesh-Ai.pdf says 2023 – Present."
+    },
+    {
+      "id": "lead_vigyan",
+      "title": "Organizer — Vigyan Rang Tech Fest",
+      "link": "",
+      "date": "",
+      "subtitle": "",
+      "org": "",
+      "bullets": [
+        {
+          "id": "b_49",
+          "text": "Organized a college-wide tech fest (~₹5L budget) with a QR-based registration/shortlisting system for **1,000+ applicants** and 5 hackathons for 500+ participants each."
+        },
+        {
+          "id": "b_50",
+          "text": "Built real-time full-stack tools for multiple departments, including a live IPL-auction simulation platform.",
+          "tags": [
+            "sde",
+            "fullstack",
+            "backend",
+            "cloud",
+            "freelance",
+            "web3"
+          ]
+        }
+      ],
+      "tags": [
+        "all"
+      ],
+      "note": "Add the year."
+    },
+    {
+      "id": "lead_gdg",
+      "title": "Google Developer Group (GDG) On Campus",
+      "link": "",
+      "date": "2023 – 2024",
+      "subtitle": "",
+      "org": "",
+      "bullets": [
+        {
+          "id": "b_51",
+          "text": "Participated in AI/ML technical sessions and completed Google Cloud training."
+        }
+      ],
+      "tags": [
+        "all"
+      ],
+      "note": "Ujesh-Ai.pdf calls this 'AI Lead' (led workshops, mentored students). mainresume.pdf says participant. Pick the accurate one."
+    }
+  ],
+  "certifications": [],
+  "variants": [
+    {
+      "id": "v_s2v5iyvpa",
+      "name": "Main (SDE)",
+      "description": "Replica of mainresume.pdf",
+      "targetTags": [
+        "sde",
+        "fullstack",
+        "backend",
+        "cloud"
+      ],
+      "accent": "1F3A5F",
+      "fontSize": "11pt",
+      "paper": "letterpaper",
+      "hiddenBullets": [
+        "b_5",
+        "b_8",
+        "b_12",
+        "b_15",
+        "b_18"
+      ],
+      "sections": [
+        {
+          "key": "summary",
+          "title": "Summary",
+          "enabled": true,
+          "items": [
+            "sum_swe"
+          ]
+        },
+        {
+          "key": "education",
+          "title": "Education",
+          "enabled": true,
+          "items": [
+            "edu_atria"
+          ]
+        },
+        {
+          "key": "experience",
+          "title": "Experience",
+          "enabled": true,
+          "items": [
+            "exp_easemed",
+            "exp_edactly",
+            "exp_hitachi"
+          ]
+        },
+        {
+          "key": "skills",
+          "title": "Technical Skills",
+          "enabled": true,
+          "items": [
+            "sk_lang",
+            "sk_core",
+            "sk_front",
+            "sk_back",
+            "sk_aiml_short",
+            "sk_db",
+            "sk_cloud",
+            "sk_tools"
+          ]
+        },
+        {
+          "key": "projects",
+          "title": "Projects",
+          "enabled": true,
+          "items": [
+            "proj_gradmesh",
+            "proj_worldforge"
+          ]
+        },
+        {
+          "key": "leadership",
+          "title": "Leadership",
+          "enabled": true,
+          "items": [
+            "lead_codeclub",
+            "lead_vigyan",
+            "lead_gdg"
+          ]
+        },
+        {
+          "key": "achievements",
+          "title": "Achievements",
+          "enabled": true,
+          "items": [
+            "ach_inception",
+            "ach_devdinova",
+            "ach_cypher",
+            "ach_finalist",
+            "ach_github"
+          ]
+        },
+        {
+          "key": "certifications",
+          "title": "Certifications",
+          "enabled": false,
+          "items": []
+        },
+        {
+          "key": "awards",
+          "title": "Honours and Awards",
+          "enabled": false,
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "v_9hs6f3vpb",
+      "name": "AI / ML Engineer",
+      "description": "AI, ML, LLM roles",
+      "targetTags": [
+        "ai",
+        "ml",
+        "llm"
+      ],
+      "accent": "1F3A5F",
+      "fontSize": "11pt",
+      "paper": "letterpaper",
+      "hiddenBullets": [
+        "b_3",
+        "b_4",
+        "b_10",
+        "b_16",
+        "b_50"
+      ],
+      "sections": [
+        {
+          "key": "summary",
+          "title": "Summary",
+          "enabled": true,
+          "items": [
+            "sum_ai"
+          ]
+        },
+        {
+          "key": "education",
+          "title": "Education",
+          "enabled": true,
+          "items": [
+            "edu_atria"
+          ]
+        },
+        {
+          "key": "experience",
+          "title": "Experience",
+          "enabled": true,
+          "items": [
+            "exp_easemed",
+            "exp_edactly",
+            "exp_hitachi"
+          ]
+        },
+        {
+          "key": "skills",
+          "title": "Technical Skills",
+          "enabled": true,
+          "items": [
+            "sk_lang",
+            "sk_ai",
+            "sk_genai",
+            "sk_ml",
+            "sk_db",
+            "sk_cloud",
+            "sk_tools"
+          ]
+        },
+        {
+          "key": "projects",
+          "title": "Projects",
+          "enabled": true,
+          "items": [
+            "proj_gradmesh",
+            "proj_worldforge",
+            "proj_buyorwait",
+            "proj_memoryglasses"
+          ]
+        },
+        {
+          "key": "leadership",
+          "title": "Leadership",
+          "enabled": true,
+          "items": [
+            "lead_codeclub",
+            "lead_vigyan",
+            "lead_gdg"
+          ]
+        },
+        {
+          "key": "achievements",
+          "title": "Achievements",
+          "enabled": true,
+          "items": [
+            "ach_inception",
+            "ach_devdinova",
+            "ach_cypher",
+            "ach_finalist",
+            "ach_github"
+          ]
+        },
+        {
+          "key": "certifications",
+          "title": "Certifications",
+          "enabled": false,
+          "items": []
+        },
+        {
+          "key": "awards",
+          "title": "Honours and Awards",
+          "enabled": false,
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "v_40mvjcvpc",
+      "name": "Full-stack / SDE",
+      "description": "Product engineering roles",
+      "targetTags": [
+        "sde",
+        "fullstack",
+        "backend"
+      ],
+      "accent": "2B4C9B",
+      "fontSize": "11pt",
+      "paper": "letterpaper",
+      "hiddenBullets": [
+        "b_5",
+        "b_6",
+        "b_8",
+        "b_12",
+        "b_15",
+        "b_18"
+      ],
+      "sections": [
+        {
+          "key": "summary",
+          "title": "Summary",
+          "enabled": true,
+          "items": [
+            "sum_swe"
+          ]
+        },
+        {
+          "key": "education",
+          "title": "Education",
+          "enabled": true,
+          "items": [
+            "edu_atria"
+          ]
+        },
+        {
+          "key": "experience",
+          "title": "Experience",
+          "enabled": true,
+          "items": [
+            "exp_easemed",
+            "exp_edactly",
+            "exp_hitachi"
+          ]
+        },
+        {
+          "key": "skills",
+          "title": "Technical Skills",
+          "enabled": true,
+          "items": [
+            "sk_lang",
+            "sk_core",
+            "sk_front",
+            "sk_back",
+            "sk_aiml_short",
+            "sk_db",
+            "sk_cloud",
+            "sk_tools"
+          ]
+        },
+        {
+          "key": "projects",
+          "title": "Projects",
+          "enabled": true,
+          "items": [
+            "proj_gradmesh",
+            "proj_worldforge",
+            "proj_buyorwait",
+            "proj_blinky"
+          ]
+        },
+        {
+          "key": "leadership",
+          "title": "Leadership",
+          "enabled": true,
+          "items": [
+            "lead_codeclub",
+            "lead_vigyan",
+            "lead_gdg"
+          ]
+        },
+        {
+          "key": "achievements",
+          "title": "Achievements",
+          "enabled": true,
+          "items": [
+            "ach_inception",
+            "ach_devdinova",
+            "ach_cypher",
+            "ach_finalist",
+            "ach_github"
+          ]
+        },
+        {
+          "key": "certifications",
+          "title": "Certifications",
+          "enabled": false,
+          "items": []
+        },
+        {
+          "key": "awards",
+          "title": "Honours and Awards",
+          "enabled": false,
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "v_7igmfavpc",
+      "name": "Cloud / Systems",
+      "description": "Cloud, infra, distributed systems",
+      "targetTags": [
+        "cloud",
+        "systems",
+        "distributed"
+      ],
+      "accent": "0F5E63",
+      "fontSize": "11pt",
+      "paper": "letterpaper",
+      "hiddenBullets": [
+        "b_5",
+        "b_8",
+        "b_12",
+        "b_18",
+        "b_48"
+      ],
+      "sections": [
+        {
+          "key": "summary",
+          "title": "Summary",
+          "enabled": true,
+          "items": [
+            "sum_swe"
+          ]
+        },
+        {
+          "key": "education",
+          "title": "Education",
+          "enabled": true,
+          "items": [
+            "edu_atria"
+          ]
+        },
+        {
+          "key": "experience",
+          "title": "Experience",
+          "enabled": true,
+          "items": [
+            "exp_easemed",
+            "exp_edactly",
+            "exp_hitachi"
+          ]
+        },
+        {
+          "key": "skills",
+          "title": "Technical Skills",
+          "enabled": true,
+          "items": [
+            "sk_lang",
+            "sk_core",
+            "sk_front",
+            "sk_back",
+            "sk_aiml_short",
+            "sk_db",
+            "sk_cloud",
+            "sk_tools"
+          ]
+        },
+        {
+          "key": "projects",
+          "title": "Projects",
+          "enabled": true,
+          "items": [
+            "proj_gradmesh",
+            "proj_worldforge"
+          ]
+        },
+        {
+          "key": "leadership",
+          "title": "Leadership",
+          "enabled": true,
+          "items": [
+            "lead_codeclub",
+            "lead_vigyan",
+            "lead_gdg"
+          ]
+        },
+        {
+          "key": "achievements",
+          "title": "Achievements",
+          "enabled": true,
+          "items": [
+            "ach_inception",
+            "ach_devdinova",
+            "ach_cypher",
+            "ach_finalist",
+            "ach_github"
+          ]
+        },
+        {
+          "key": "certifications",
+          "title": "Certifications",
+          "enabled": false,
+          "items": []
+        },
+        {
+          "key": "awards",
+          "title": "Honours and Awards",
+          "enabled": false,
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "v_qf12v0vpc",
+      "name": "Web3",
+      "description": "Blockchain roles & bounties",
+      "targetTags": [
+        "web3"
+      ],
+      "accent": "553C7B",
+      "fontSize": "11pt",
+      "paper": "letterpaper",
+      "hiddenBullets": [
+        "b_5",
+        "b_6",
+        "b_8",
+        "b_12",
+        "b_15",
+        "b_16",
+        "b_18",
+        "b_48"
+      ],
+      "sections": [
+        {
+          "key": "summary",
+          "title": "Summary",
+          "enabled": true,
+          "items": [
+            "sum_swe"
+          ]
+        },
+        {
+          "key": "education",
+          "title": "Education",
+          "enabled": true,
+          "items": [
+            "edu_atria"
+          ]
+        },
+        {
+          "key": "experience",
+          "title": "Experience",
+          "enabled": true,
+          "items": [
+            "exp_easemed",
+            "exp_edactly",
+            "exp_hitachi"
+          ]
+        },
+        {
+          "key": "skills",
+          "title": "Technical Skills",
+          "enabled": true,
+          "items": [
+            "sk_lang",
+            "sk_core",
+            "sk_front",
+            "sk_back",
+            "sk_aiml_short",
+            "sk_db",
+            "sk_cloud",
+            "sk_web3",
+            "sk_tools"
+          ]
+        },
+        {
+          "key": "projects",
+          "title": "Projects",
+          "enabled": true,
+          "items": [
+            "proj_gradmesh",
+            "proj_worldforge",
+            "proj_naturaljson",
+            "proj_gitpay"
+          ]
+        },
+        {
+          "key": "leadership",
+          "title": "Leadership",
+          "enabled": true,
+          "items": [
+            "lead_codeclub",
+            "lead_vigyan",
+            "lead_gdg"
+          ]
+        },
+        {
+          "key": "achievements",
+          "title": "Achievements",
+          "enabled": true,
+          "items": [
+            "ach_inception",
+            "ach_devdinova",
+            "ach_cypher",
+            "ach_finalist",
+            "ach_github"
+          ]
+        },
+        {
+          "key": "certifications",
+          "title": "Certifications",
+          "enabled": false,
+          "items": []
+        },
+        {
+          "key": "awards",
+          "title": "Honours and Awards",
+          "enabled": false,
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "v_1w4cvlvpc",
+      "name": "Freelance",
+      "description": "Client work & gigs",
+      "targetTags": [
+        "freelance",
+        "fullstack"
+      ],
+      "accent": "22543D",
+      "fontSize": "11pt",
+      "paper": "letterpaper",
+      "hiddenBullets": [
+        "b_5",
+        "b_6",
+        "b_12",
+        "b_15",
+        "b_16",
+        "b_18",
+        "b_48"
+      ],
+      "sections": [
+        {
+          "key": "summary",
+          "title": "Summary",
+          "enabled": true,
+          "items": [
+            "sum_swe"
+          ]
+        },
+        {
+          "key": "education",
+          "title": "Education",
+          "enabled": true,
+          "items": [
+            "edu_atria"
+          ]
+        },
+        {
+          "key": "experience",
+          "title": "Experience",
+          "enabled": true,
+          "items": [
+            "exp_easemed",
+            "exp_edactly",
+            "exp_hitachi"
+          ]
+        },
+        {
+          "key": "skills",
+          "title": "Technical Skills",
+          "enabled": true,
+          "items": [
+            "sk_lang",
+            "sk_core",
+            "sk_front",
+            "sk_back",
+            "sk_aiml_short",
+            "sk_db",
+            "sk_cloud",
+            "sk_tools"
+          ]
+        },
+        {
+          "key": "projects",
+          "title": "Projects",
+          "enabled": true,
+          "items": [
+            "proj_gradmesh",
+            "proj_worldforge",
+            "proj_blinky"
+          ]
+        },
+        {
+          "key": "leadership",
+          "title": "Leadership",
+          "enabled": true,
+          "items": [
+            "lead_codeclub",
+            "lead_vigyan",
+            "lead_gdg"
+          ]
+        },
+        {
+          "key": "achievements",
+          "title": "Achievements",
+          "enabled": true,
+          "items": [
+            "ach_inception",
+            "ach_devdinova",
+            "ach_cypher",
+            "ach_finalist",
+            "ach_github"
+          ]
+        },
+        {
+          "key": "certifications",
+          "title": "Certifications",
+          "enabled": false,
+          "items": []
+        },
+        {
+          "key": "awards",
+          "title": "Honours and Awards",
+          "enabled": false,
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "v_vkw3w7vpc",
+      "name": "Everything",
+      "description": "Every item in the library — trim from here",
+      "targetTags": [],
+      "accent": "2D2D2D",
+      "fontSize": "11pt",
+      "paper": "letterpaper",
+      "hiddenBullets": [],
+      "sections": [
+        {
+          "key": "summary",
+          "title": "Summary",
+          "enabled": true,
+          "items": [
+            "sum_swe"
+          ]
+        },
+        {
+          "key": "education",
+          "title": "Education",
+          "enabled": true,
+          "items": [
+            "edu_atria"
+          ]
+        },
+        {
+          "key": "experience",
+          "title": "Experience",
+          "enabled": true,
+          "items": [
+            "exp_easemed",
+            "exp_edactly",
+            "exp_hitachi"
+          ]
+        },
+        {
+          "key": "skills",
+          "title": "Technical Skills",
+          "enabled": true,
+          "items": [
+            "sk_lang",
+            "sk_core",
+            "sk_front",
+            "sk_back",
+            "sk_aiml_short",
+            "sk_ai",
+            "sk_genai",
+            "sk_ml",
+            "sk_db",
+            "sk_cloud",
+            "sk_web3",
+            "sk_tools"
+          ]
+        },
+        {
+          "key": "projects",
+          "title": "Projects",
+          "enabled": true,
+          "items": [
+            "proj_gradmesh",
+            "proj_worldforge",
+            "proj_buyorwait",
+            "proj_memoryglasses",
+            "proj_blinky",
+            "proj_naturaljson",
+            "proj_gitpay",
+            "proj_blockparty",
+            "proj_dryp",
+            "proj_bnbagents",
+            "proj_attest",
+            "proj_waterleak",
+            "proj_disaster",
+            "proj_leadgen"
+          ]
+        },
+        {
+          "key": "leadership",
+          "title": "Leadership",
+          "enabled": true,
+          "items": [
+            "lead_codeclub",
+            "lead_vigyan",
+            "lead_gdg"
+          ]
+        },
+        {
+          "key": "achievements",
+          "title": "Achievements",
+          "enabled": true,
+          "items": [
+            "ach_inception",
+            "ach_devdinova",
+            "ach_cypher",
+            "ach_finalist",
+            "ach_github"
+          ]
+        },
+        {
+          "key": "certifications",
+          "title": "Certifications",
+          "enabled": false,
+          "items": []
+        },
+        {
+          "key": "awards",
+          "title": "Honours and Awards",
+          "enabled": false,
+          "items": []
+        }
+      ]
+    }
+  ]
+}
