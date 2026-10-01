@@ -19,7 +19,7 @@ npm run dev      # http://localhost:3000
 ## Workflow
 
 1. **Library** (`/library`): add or edit your profile, summary, education (CGPA lives here),
-   experience, projects, skills, achievements, leadership and certifications.
+   experience, projects, publications, skills, achievements, leadership and certifications.
    - Tag every entry with the roles it suits: `ai`, `ml`, `llm`, `sde`, `fullstack`, `backend`,
      `cloud`, `systems`, `web3`, `freelance`…  Use `all` for things every resume needs.
    - Bullets can have their own tags too. A tagged bullet only appears on variants with a
@@ -34,8 +34,16 @@ npm run dev      # http://localhost:3000
      entries and sections. Section titles are editable.
    - Choose the accent colour, 10/11pt and Letter/A4.
    - Sections print in the standard order: Summary, Education, Experience, Skills, Projects, then
-     Leadership / Achievements / Certifications. If a resume runs to two pages, the toolbar offers
+     Publications, then Leadership / Achievements / Certifications. If a resume runs to two pages, the toolbar offers
      **Skills above Experience** in one click.
+   - **Auto-fit guarantees the page limit.** Each variant has a "Max pages" setting (default 2).
+     If the resume runs long, the app tightens line spacing, then font size, then caps project
+     bullets, and only as a last resort hides the lowest-priority entries (extra projects first,
+     never education, experience or publications) until it fits. The badge says what it did;
+     hover it for the list. Nothing in your library is changed — only that resume's PDF.
+   - **Pages stay balanced.** On a multi-page resume the leftover space is shared out between
+     sections (`lushbottom`) instead of being dumped as one hole at the bottom of page one, so
+     every page ends on the same line. The final page keeps its natural ragged bottom.
    - The preview recompiles automatically. The page-count badge warns when you pass one page,
      and the overflow badge warns when a heading runs past the margin.
    - **Timeline view** (top right toggle, or `/?view=timeline`): every dated entry on one

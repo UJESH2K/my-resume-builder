@@ -5,6 +5,7 @@ export type SectionKey =
   | "education"
   | "experience"
   | "projects"
+  | "publications"
   | "skills"
   | "awards"
   | "achievements"
@@ -63,6 +64,17 @@ export interface Award extends BaseItem {
   bullets: Bullet[];
 }
 
+export interface Publication extends BaseItem {
+  title: string;
+  authors: string; // put your own name in **bold** so it stands out
+  venue: string; // conference, journal or workshop
+  status: string; // Accepted / Under review / Published / Preprint
+  date: string;
+  link: string;
+  linkLabel: string; // Paper / DOI / arXiv …
+  bullets: Bullet[];
+}
+
 export interface SkillGroup extends BaseItem {
   category: string;
   items: string;
@@ -99,6 +111,7 @@ export interface Variant {
   accent: string; // hex without '#'
   fontSize: "10pt" | "11pt";
   paper: "letterpaper" | "a4paper";
+  maxPages?: number; // hard ceiling; 0 = no limit. Auto-fit shrinks the resume to respect it.
   sections: VariantSection[];
   hiddenBullets: string[]; // bullet ids excluded from this variant
 }
@@ -110,6 +123,7 @@ export interface Db {
   education: Education[];
   experience: Experience[];
   projects: Project[];
+  publications: Publication[];
   skills: SkillGroup[];
   awards: Award[];
   achievements: LineItem[];
@@ -118,4 +132,4 @@ export interface Db {
   variants: Variant[];
 }
 
-export type AnyItem = Education | Experience | Project | SkillGroup | Award | LineItem;
+export type AnyItem = Education | Experience | Project | Publication | SkillGroup | Award | LineItem;

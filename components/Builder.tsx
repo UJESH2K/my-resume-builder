@@ -12,8 +12,10 @@ import { TagInput } from "./TagInput";
 interface Preview {
   url: string;
   pages: number;
+  maxPages: number;
   overflows: number;
   fileName: string;
+  fit: { label: string; notes: string[]; ok: boolean; attempts: number };
 }
 
 const LS_KEY = "resume-studio:variant";
@@ -106,11 +108,16 @@ export function Builder() {
         setError(null);
         setPreview((old) => {
           if (old) URL.revokeObjectURL(old.url);
+          const fitHeader = r.headers.get("X-Fit");
           return {
             url: URL.createObjectURL(blob),
             pages: Number(r.headers.get("X-Pages") ?? 0),
+            maxPages: Number(r.headers.get("X-Max-Pages") ?? 0),
             overflows: Number(r.headers.get("X-Overflows") ?? 0),
             fileName: r.headers.get("X-File-Name") ?? "resume.pdf",
+            fit: fitHeader
+              ? JSON.parse(decodeURIComponent(fitHeader))
+              : { label: "", notes: [], ok: true, attempts: 1 },
           };
         });
         if (mode === "save") {
@@ -333,6 +340,18 @@ export function Builder() {
               </select>
             </label>
             <label className="field inline">
+              <span>Max pages</span>
+              <select
+                value={variant.maxPages ?? 2}
+                onChange={(e) => editVariant((v) => void (v.maxPages = Number(e.target.value)))}
+                title="Auto-fit shrinks the resume so it never goes past this"
+              >
+                <option value={1}>1 page (hard)</option>
+                <option value={2}>2 pages (hard)</option>
+                <option value={0}>No limit</option>
+              </select>
+            </label>
+            <label className="field inline">
               <span>Paper</span>
               <select
                 value={variant.paper}
@@ -402,9 +421,23 @@ export function Builder() {
           </label>
           {preview && (
             <>
-              <span className={`badge ${preview.pages > 1 ? "warn" : "ok"}`}>
+              <span className={`badge ${preview.maxPages && preview.pages > preview.maxPages ? "bad" : preview.pages > 1 ? "warn" : "ok"}`}>
                 {preview.pages} page{preview.pages === 1 ? "" : "s"}
+                {preview.maxPages ? ` / ${preview.maxPages}` : ""}
               </span>
+              {preview.fit.label && preview.fit.label !== "as written" && (
+                <span
+                  className={`badge ${preview.fit.ok ? "fit" : "bad"}`}
+                  title={[
+                    (preview.fit.ok ? "Auto-fit applied: " : "Could not fit! ") + preview.fit.label,
+                    ...preview.fit.notes,
+                    `${preview.fit.attempts} compile(s)`,
+                  ].join("\n")}
+                >
+                  {preview.fit.ok ? "auto-fit: " : "overflow: "}
+                  {preview.fit.label}
+                </span>
+              )}
               {preview.pages > 1 && skillsBelowExperience && (
                 <button className="btn sm primary-ghost" onClick={swapSkills} title="Recommended on 2-page resumes">
                   Skills above Experience

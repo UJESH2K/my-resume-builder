@@ -1252,3 +1252,18 @@ button.bullet-count {
   cursor: pointer;
   padding: 0;
 }
+
+.badge.fit {
+  background: var(--brand-soft);
+  color: var(--brand);
+  cursor: help;
+}
+.badge.bad {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+.fit-note {
+  margin: 10px 16px 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}

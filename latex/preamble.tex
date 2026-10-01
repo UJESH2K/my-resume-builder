@@ -77,6 +77,17 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+% Publication entry: paper titles are long, so the title column wraps instead of running off the page.
+\newcommand{\resumePublication}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{@{}p{0.66\textwidth}@{\extracolsep{\fill}}r@{}}
+      \textbf{#1} & \textbf{\small #2}
+    \end{tabular*}
+    \begin{tabular*}{1.0\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+      \textit{\small#3} & \textit{\small #4}
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
     \vspace{-2pt}\item
     \begin{tabular*}{1.001\textwidth}[t]{l@{\extracolsep{\fill}}r}

@@ -108,6 +108,37 @@ export const SECTION_DEFS: Record<SectionKey, SectionDef> = {
     sub: (i) => i.tech,
     blank: () => ({ id: uid("proj_"), name: "", tech: "", date: "", codeLink: "", liveLink: "", bullets: [], tags: [] }),
   },
+  publications: {
+    key: "publications",
+    label: "Publications",
+    defaultTitle: "Research & Publications",
+    fields: [
+      { key: "title", label: "Paper title", type: "textarea" },
+      { key: "authors", label: "Authors (put your own name in **bold**)", type: "text" },
+      { key: "venue", label: "Conference / journal / workshop", type: "text", half: true },
+      { key: "status", label: "Status", type: "text", placeholder: "Accepted / Under review / Published", half: true },
+      { key: "date", label: "Date", type: "text", placeholder: "Oct 2026", half: true },
+      { key: "link", label: "Link (DOI, arXiv, PDF)", type: "text", half: true },
+      { key: "linkLabel", label: "Link text", type: "text", placeholder: "Paper", half: true },
+      bulletsField,
+      tagsField,
+      noteField,
+    ],
+    summary: (i) => i.title || "Untitled paper",
+    sub: (i) => [i.venue, i.status, i.date].filter(Boolean).join(" · "),
+    blank: () => ({
+      id: uid("pub_"),
+      title: "",
+      authors: "",
+      venue: "",
+      status: "",
+      date: "",
+      link: "",
+      linkLabel: "Paper",
+      bullets: [],
+      tags: [],
+    }),
+  },
   skills: {
     key: "skills",
     label: "Skills",
@@ -197,6 +228,7 @@ export const SECTION_ORDER: SectionKey[] = [
   "experience",
   "skills",
   "projects",
+  "publications",
   "leadership",
   "achievements",
   "certifications",
@@ -231,6 +263,7 @@ export function blankVariant(db: Db, name = "New variant"): Variant {
     accent: ACCENTS[0].hex,
     fontSize: "11pt",
     paper: "letterpaper",
+    maxPages: 2,
     hiddenBullets: [],
     sections: SECTION_ORDER.map((key) => ({
       key,
@@ -244,19 +277,25 @@ export function blankVariant(db: Db, name = "New variant"): Variant {
 /** Make sure a variant has an entry for every section and no dangling ids. */
 export function normalizeVariant(db: Db, v: Variant): Variant {
   const present = new Set(v.sections.map((s) => s.key));
-  const sections = [
-    ...v.sections,
-    ...SECTION_ORDER.filter((k) => !present.has(k)).map((key) => ({
-      key,
-      title: SECTION_DEFS[key].defaultTitle,
-      enabled: false,
-      items: [] as string[],
-    })),
-  ].map((s) => {
+  const sections = [...v.sections];
+  // A section added to the app later slots into its standard position, not onto the end.
+  for (const key of SECTION_ORDER) {
+    if (present.has(key)) continue;
+    const blank = { key, title: SECTION_DEFS[key].defaultTitle, enabled: false, items: [] as string[] };
+    const after = SECTION_ORDER.slice(0, SECTION_ORDER.indexOf(key));
+    let at = sections.length;
+    for (let i = 0; i < sections.length; i++)
+      if (!after.includes(sections[i].key)) {
+        at = i;
+        break;
+      }
+    sections.splice(at, 0, blank);
+  }
+  const normalised = sections.map((s) => {
     const ids = new Set(itemsOf(db, s.key).map((i) => i.id));
     return { ...s, items: s.items.filter((id) => ids.has(id)) };
   });
-  return { ...v, sections };
+  return { ...v, sections: normalised };
 }
 
 /** Items tagged "all" always match; otherwise any overlap with the variant's target tags. */

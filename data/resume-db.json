@@ -691,7 +691,8 @@
       "text": "**Winner** — Denova International Blockchain Hackathon (Solana Track).",
       "tags": [
         "all"
-      ]
+      ],
+      "note": "Spelling: your old resume says 'Dev Dinova', this says 'Denova'. Check the certificate and make both match."
     },
     {
       "id": "ach_e8ewskiq1",
@@ -709,11 +710,19 @@
     },
     {
       "id": "ach_finalist",
-      "text": "**Finalist in 15+ national hackathons**; Regional Qualifier, Google Solution Challenge India; ICPC regional prelims qualifier (2x).",
+      "text": "**7x hackathon winner** and **20x national-level finalist** across **50+ hackathons**, including Google Solution Challenge (Regional Qualifier), HackerRank Orchestrate (Bronze) and Smart India Hackathon (College Rank 1).",
       "tags": [
         "all"
       ],
-      "note": "Ujesh-Ai.pdf says 10+ finalist — confirm the count."
+      "note": "Counts come from your own draft — keep them honest and consistent across resumes and applications."
+    },
+    {
+      "id": "ach_cp",
+      "text": "**CodeChef rating 1700**; **ICPC Regional Preliminaries** qualifier (2x).",
+      "tags": [
+        "all"
+      ],
+      "note": "Update the CodeChef rating when it changes."
     },
     {
       "id": "ach_github",
@@ -793,9 +802,9 @@
         "backend",
         "cloud"
       ],
-      "accent": "1F3A5F",
+      "accent": "0F5E63",
       "fontSize": "11pt",
-      "paper": "letterpaper",
+      "paper": "a4paper",
       "hiddenBullets": [
         "b_5",
         "b_8",
@@ -851,10 +860,18 @@
           "title": "Projects",
           "enabled": true,
           "items": [
-            "proj_gradmesh",
             "proj_worldforge",
-            "proj_blockparty",
-            "proj_buyorwait"
+            "proj_blockparty"
+          ]
+        },
+        {
+          "key": "publications",
+          "title": "Research & Publications",
+          "enabled": true,
+          "items": [
+            "pub_gradmesh",
+            "pub_viksit",
+            "pub_crossvendor"
           ]
         },
         {
@@ -876,6 +893,7 @@
             "ach_e8ewskiq1",
             "ach_cypher",
             "ach_finalist",
+            "ach_cp",
             "ach_github"
           ]
         },
@@ -891,7 +909,8 @@
           "enabled": false,
           "items": []
         }
-      ]
+      ],
+      "maxPages": 2
     },
     {
       "id": "v_9hs6f3vpb",
@@ -965,6 +984,16 @@
           ]
         },
         {
+          "key": "publications",
+          "title": "Research & Publications",
+          "enabled": true,
+          "items": [
+            "pub_gradmesh",
+            "pub_crossvendor",
+            "pub_viksit"
+          ]
+        },
+        {
           "key": "leadership",
           "title": "Leadership",
           "enabled": true,
@@ -982,6 +1011,7 @@
             "ach_devdinova",
             "ach_cypher",
             "ach_finalist",
+            "ach_cp",
             "ach_github"
           ]
         },
@@ -997,7 +1027,8 @@
           "enabled": false,
           "items": []
         }
-      ]
+      ],
+      "maxPages": 2
     },
     {
       "id": "v_40mvjcvpc",
@@ -1073,6 +1104,14 @@
           ]
         },
         {
+          "key": "publications",
+          "title": "Research & Publications",
+          "enabled": true,
+          "items": [
+            "pub_gradmesh"
+          ]
+        },
+        {
           "key": "leadership",
           "title": "Leadership",
           "enabled": true,
@@ -1090,6 +1129,7 @@
             "ach_devdinova",
             "ach_cypher",
             "ach_finalist",
+            "ach_cp",
             "ach_github"
           ]
         },
@@ -1105,7 +1145,8 @@
           "enabled": false,
           "items": []
         }
-      ]
+      ],
+      "maxPages": 2
     },
     {
       "id": "v_7igmfavpc",
@@ -1178,6 +1219,15 @@
           ]
         },
         {
+          "key": "publications",
+          "title": "Research & Publications",
+          "enabled": true,
+          "items": [
+            "pub_gradmesh",
+            "pub_crossvendor"
+          ]
+        },
+        {
           "key": "leadership",
           "title": "Leadership",
           "enabled": true,
@@ -1195,6 +1245,7 @@
             "ach_devdinova",
             "ach_cypher",
             "ach_finalist",
+            "ach_cp",
             "ach_github"
           ]
         },
@@ -1210,7 +1261,8 @@
           "enabled": false,
           "items": []
         }
-      ]
+      ],
+      "maxPages": 2
     },
     {
       "id": "v_qf12v0vpc",
@@ -1287,6 +1339,12 @@
           ]
         },
         {
+          "key": "publications",
+          "title": "Research & Publications",
+          "enabled": false,
+          "items": []
+        },
+        {
           "key": "leadership",
           "title": "Leadership",
           "enabled": true,
@@ -1304,6 +1362,7 @@
             "ach_devdinova",
             "ach_cypher",
             "ach_finalist",
+            "ach_cp",
             "ach_github"
           ]
         },
@@ -1319,7 +1378,8 @@
           "enabled": false,
           "items": []
         }
-      ]
+      ],
+      "maxPages": 2
     },
     {
       "id": "v_1w4cvlvpc",
@@ -1394,6 +1454,12 @@
           ]
         },
         {
+          "key": "publications",
+          "title": "Research & Publications",
+          "enabled": false,
+          "items": []
+        },
+        {
           "key": "leadership",
           "title": "Leadership",
           "enabled": true,
@@ -1411,6 +1477,7 @@
             "ach_devdinova",
             "ach_cypher",
             "ach_finalist",
+            "ach_cp",
             "ach_github"
           ]
         },
@@ -1426,7 +1493,8 @@
           "enabled": false,
           "items": []
         }
-      ]
+      ],
+      "maxPages": 2
     },
     {
       "id": "v_vkw3w7vpc",
@@ -1505,6 +1573,16 @@
           ]
         },
         {
+          "key": "publications",
+          "title": "Research & Publications",
+          "enabled": true,
+          "items": [
+            "pub_gradmesh",
+            "pub_crossvendor",
+            "pub_viksit"
+          ]
+        },
+        {
           "key": "leadership",
           "title": "Leadership",
           "enabled": true,
@@ -1522,6 +1600,7 @@
             "ach_devdinova",
             "ach_cypher",
             "ach_finalist",
+            "ach_cp",
             "ach_github"
           ]
         },
@@ -1537,7 +1616,94 @@
           "enabled": false,
           "items": []
         }
-      ]
+      ],
+      "maxPages": 2
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub_gradmesh",
+      "title": "GradMesh: A Network-Based Distributed GPU Architecture for Deep Learning Training",
+      "authors": "**Ujesh Kumar Yadav**",
+      "venue": "IMPACT-2027 International Conference (DMPedia Conference Series)",
+      "status": "Accepted",
+      "date": "Jan 2027",
+      "link": "",
+      "linkLabel": "Paper",
+      "bullets": [
+        {
+          "id": "b_pub_gm0",
+          "text": "Accepted for publication; to be presented at **IMPACT-2027**, January 2027."
+        },
+        {
+          "id": "b_pub_gm1",
+          "text": "Network-based architecture that pools idle consumer GPUs across a LAN into a single training cluster, with a coordinator-worker design for workload distribution and result aggregation."
+        },
+        {
+          "id": "b_pub_gm2",
+          "text": "Benchmarked distributed inference across **4 GPU nodes**, achieving up to **1.8x speedup** over single-node execution.",
+          "tags": [
+            "ai",
+            "ml",
+            "systems",
+            "distributed",
+            "cloud"
+          ]
+        }
+      ],
+      "tags": [
+        "all"
+      ],
+      "note": "ADD CO-AUTHORS in the exact order printed on the paper (currently lists only you). Add the DOI/proceedings link once it is online. Keep status as 'Accepted' until it is actually published."
+    },
+    {
+      "id": "pub_viksit",
+      "title": "Book chapter — *Artificial Intelligence for Viksit Bharat 2047: Technologies, Applications and Policy Perspectives*",
+      "authors": "**Ujesh Kumar Yadav**",
+      "venue": "National edited volume, MNNIT Allahabad",
+      "status": "Abstract accepted (conditional)",
+      "date": "",
+      "link": "",
+      "linkLabel": "Book",
+      "bullets": [
+        {
+          "id": "b_pub_vb1",
+          "text": "Selected contribution to a national volume aligned with the Government of India's **Viksit Bharat 2047** initiative; full chapter in preparation."
+        }
+      ],
+      "tags": [
+        "all"
+      ],
+      "note": "Chapter title still needed. Status is 'abstract accepted (conditional)' — do not upgrade to 'Accepted' until the full chapter is accepted. Do NOT claim Government of India funding unless you have it in writing; the acceptance email only says the book supports the initiative."
+    },
+    {
+      "id": "pub_crossvendor",
+      "title": "Cross-Vendor Heterogeneous GPU Orchestration for Distributed Deep Learning Training",
+      "authors": "**Ujesh Kumar Yadav** (sole author)",
+      "venue": "Independent research — in preparation",
+      "status": "Ongoing",
+      "date": "",
+      "link": "",
+      "linkLabel": "Paper",
+      "bullets": [
+        {
+          "id": "b_pub_cv1",
+          "text": "Building a unified orchestration layer that pools **NVIDIA (CUDA), Intel and Apple Silicon (Metal)** GPUs into one training cluster."
+        },
+        {
+          "id": "b_pub_cv2",
+          "text": "Addresses workload partitioning and synchronisation across mismatched hardware and software stacks; extends the GradMesh work towards a full conference paper."
+        }
+      ],
+      "tags": [
+        "ai",
+        "ml",
+        "systems",
+        "distributed",
+        "cloud",
+        "backend"
+      ],
+      "note": "Ongoing and unsubmitted — only change the status to 'Under review' once it is actually submitted somewhere."
     }
   ]
 }

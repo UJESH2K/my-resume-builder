@@ -6,7 +6,7 @@ import { SECTION_DEFS, itemsOf, matchesTags } from "@/lib/sections";
 import type { AnyItem, Bullet, Db, SectionKey, Variant } from "@/lib/types";
 
 /** Sections that live on the timeline. Summary and Skills have no dates, so they stay in the Sections view. */
-const DATED: SectionKey[] = ["education", "experience", "projects", "leadership", "achievements", "certifications", "awards"];
+const DATED: SectionKey[] = ["education", "experience", "projects", "publications", "leadership", "achievements", "certifications", "awards"];
 
 interface Entry {
   key: SectionKey;

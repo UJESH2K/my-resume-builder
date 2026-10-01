@@ -1,4 +1,4 @@
-﻿import type { Award, Bullet, Db, Education, Experience, LineItem, Project, SkillGroup, Variant, VariantSection } from "./types";
+import type { Award, Bullet, Db, Education, Experience, LineItem, Project, Publication, SkillGroup, Variant, VariantSection } from "./types";
 
 // ---------- escaping & inline markup ----------
 
@@ -151,6 +151,22 @@ function renderAwards(items: Award[], title: string, hidden: Set<string>) {
   );
 }
 
+/** Title + status/date on row one, authors and venue in italics on row two, as papers are normally listed. */
+function renderPublications(items: Publication[], title: string, hidden: Set<string>) {
+  return subheadingSection(
+    title,
+    items.map((p) => {
+      const head = link(p.link, inline(p.title));
+      const right = [p.status?.trim() ? esc(p.status) : "", p.date?.trim() ? esc(p.date) : ""].filter(Boolean).join(" $|$ ");
+      const venue = [p.venue?.trim() ? inline(p.venue) : "", p.link?.trim() ? link(p.link, inline(p.linkLabel?.trim() || "Paper")) : ""]
+        .filter(Boolean)
+        .join(" $|$ ");
+      return `\\resumePublication{${head}}{${right}}{${inline(p.authors)}}{${venue}}\n` + bulletList(p.bullets, hidden);
+    }),
+    "\\vspace{-8pt}"
+  );
+}
+
 function renderSkills(items: SkillGroup[], title: string) {
   const lines = items.filter((s) => s.category.trim() || s.items.trim());
   if (!lines.length) return "";
@@ -193,6 +209,8 @@ function renderSection(db: Db, s: VariantSection, hidden: Set<string>): string {
       return renderExperience(items, s.title, hidden);
     case "projects":
       return renderProjects(items, s.title, hidden);
+    case "publications":
+      return renderPublications(items, s.title, hidden);
     case "awards":
     case "leadership":
       return renderAwards(items, s.title, hidden);
@@ -226,12 +244,12 @@ function renderHeader(db: Db): string {
   );
 }
 
-export function buildTex(db: Db, v: Variant, preamble: string): string {
+export function buildTex(db: Db, v: Variant, preamble: string, extraPreamble = ""): string {
   const hidden = new Set(v.hiddenBullets);
   const head = preamble
     .replace("%%PAPER%%", v.paper || "letterpaper")
     .replace("%%FONTSIZE%%", v.fontSize || "11pt")
     .replace("%%ACCENT%%", (v.accent || "1F3A5F").replace("#", "").toUpperCase());
   const body = v.sections.map((s) => renderSection(db, s, hidden)).filter(Boolean).join("\n");
-  return `${head}\n\\begin{document}\n\n${renderHeader(db)}\n${body}\n\\end{document}\n`;
+  return `${head}${extraPreamble}\n\\begin{document}\n\n${renderHeader(db)}\n${body}\n\\end{document}\n`;
 }
